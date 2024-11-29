@@ -1,0 +1,30 @@
+Cuando un proceso es ejecutable, el sistema operativo debe decidir cuál de ellos, debe ejecutarse en primer término. Esa parte del sistema operativo que debe llevar a cabo esa decisión se llama el planificador y el algoritmo que utiliza se llama algoritmo de planificación.
+
+En las épocas pasadas de los sistemas de procedimientos por lotes, con una entrada de forma de imágenes de tarjeta en una cinta magnética, el algoritmo de planificación era sencillo: sólo había que ejecutar el siguiente trabajo en la cinta. En los sistemas de multiusuario de tiempo compartido, que se combina en un fondo de trabajos procesados en lote, el algoritmo era más complejo. De forma invariable, existían varios usuarios en espera de servicios y podían existir otros trabajos para ser procesados en lotes, en épocas pasadas de los sistemas de procesamiento por lotes.
+
+Existen varios criterios para los algoritmos de planificación específicos, para que sea un buen algoritmo de planificación.
+
+Equidad: garantizar que cada proceso obtiene su proporción justa de la CPU. Eficacia: mantener ocupada a la CPU el 100% de tiempo.
+Tiempo de respuesta: minimizar el tiempo de respuesta para los usuarios interactivos.
+Tiempo de regreso: minimizar el tiempo que deben de esperar los usuarios por lotes para obtener sus resultados.
+Rendimiento: maximizar el número de tareas procesadas por hora.
+Los mecanismos de planificación pueden ser usados, al menos en teoría, por cualquiera de los tres tipos de planificadores. En algunas ocasiones, algunos algoritmos se adaptan mejor a las necesidades de un tipo determinado de planificador. Según que se use una disciplina determinada de planificación por un planificador a largo o corto plazo.
+
+Se puede establecer una división importante entre los enfoques de la planificación, según que dependan de la sustitución (por derecho preferente y no derecho preferente). Al aplicarlo a la planificación a corto plazo, la no sustitución (por derecho preferente), implica que el proceso en ejecución conserva el disfrute de los recursos asignados, incluida la CPU, hasta que dicho proceso en ejecución cede voluntariamente el control al SO. Al proceso en ejecución no se le puede forzar a renunciar a la posesión de la CPU cuando un proceso de prioridad más alta queda preparado para su ejecución. No obstante, cuando el proceso en ejecución queda en suspenso como resultado de su propia acción, por ejemplo, por esperar a la terminación de entrada/salida de datos, se puede planificar otro proceso ya preparado.
+
+La planificación con derecho preferente, en cualquier momento, se puede sustituir un proceso en ejecución por otro de prioridad más elevada, lo cual se consigue activando el planificador, siempre que se detecta un evento que cambia el estado del sistema. Dado que dichos eventos incluyen varias acciones, además de la cesión voluntaria del control por parte del proceso en ejecución, la sustitución (por derecho preferente) hace necesaria una ejecución más fuerte que el planificador.
+
+Una complicación que deben de enfrentar los planificadores es que cada proceso es único e impredecible. Algunos de los procesos utilizan una gran cantidad de tiempo en espera del archivo de entrada/salida mientras que otros utilizan la CPU por varias horas consecutivas si tienen la oportunidad. Cuando el planificador comienza a ejecutar algún proceso, nunca sabe a ciencia cierta cuánto tiempo transcurrirá hasta que el proceso se bloquee, ya sea para entrada/salida o debido a un semáforo, o por alguna otra razón.
+
+Para garantizar que ningún proceso se ejecute por un tiempo excesivo, casi todas las computadoras tienen un cronómetro electrónico o un reloj incluido, que provoca una interrupción en forma periódica.
+
+La estrategia de permitir que procesos ejecutables sean suspendidos en forma temporal se llama planificación apropiativa, en contraste con el método de ejecución hasta terminar de los primeros sistemas por lotes. La ejecución hasta terminar también recibe el nombre de planificación no apropiativa.
+Los algoritmos de planificación más comunes que hoy en día se conocen son:
+
+Planificación tipo round robin.
+Planificación por prioridad.
+Planificación colas múltiples.
+Planificación primero el más corto.
+Planificación de servicio por orden de llegada (FCFS, First–Come–First–Served).
+Planificación con colas de niveles múltiples (MLQ, multiple level queue).
+Planificación con expropiación basada en prioridades (ED, Event Driven).
