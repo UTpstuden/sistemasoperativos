@@ -1,0 +1,3 @@
+La encriptación o cifrado es un mecanismo de seguridad que permite modificar un mensaje de modo que su contenido sea ilegible, salvo para su destinatario. De modo inverso, la desencriptación o descifrado permitirá hacer legible un mensaje que estaba cifrado.
+
+Usando criptografía de clave pública el emisor del mensaje cifrará el mensaje aplicando la clave pública del destinatario. Será por tanto el destinatario, el único que podrá descifrar el mensaje aplicando su clave privada.
